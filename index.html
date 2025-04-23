@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:;">
     <title>小道童 - 傳承道法 · 智能解玄 · 區塊護道 · 未來可期</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="src/languages/languageManager.js"></script>
 </head>
 <body>
     <header>
@@ -22,13 +23,13 @@
                 <li><a href="#" class="contact-link" data-i18n="nav.contact">聯絡</a></li>
             </ul>
             <div class="lang-switch">
-                <button class="lang-btn" data-i18n="nav.language">
-                    <span class="current-lang">中文繁體</span>
-                    <img src="images/arrow_drop.png" alt="arrow" style="width: 8px"/>
+                <button class="lang-btn">
+                    <span class="lang-text">中文繁體</span>
+                    <img src="images/arrow_drop.png" alt="arrow" class="dropdown-arrow"/>
                 </button>
                 <div class="lang-dropdown">
-                    <button data-lang="zh" data-i18n="nav.language.zh">中文繁體</button>
-                    <button data-lang="en" data-i18n="nav.language.en">English</button>
+                    <button class="lang-option" data-lang="zh">中文繁體</button>
+                    <button class="lang-option" data-lang="en">English</button>
                 </div>
             </div>
         </nav>
@@ -42,7 +43,7 @@
                 <div class="cta-buttons">
                     <button class="btn ios"><img src="images/icon_ios.png"/><br/><span data-i18n="footer.buttons.ios">敬请期待</span></button>
                     <a href="#" target="_blank" class="btn android"><img src="images/icon_android.png" alt="Android App"/><br/><span data-i18n="footer.buttons.android">Android</span></a>
-                    <a href="#" target="_blank" class="btn tele"><img src="images/icon_tele.png" alt="Telegram App"/><br/><span data-i18n="footer.buttons.telegram">Tele mini App</span></a>
+                    <a href="https://t.me/bitdao_dev_bot" target="_blank" class="btn tele"><img src="images/icon_tele.png" alt="Telegram App"/><br/><span data-i18n="footer.buttons.telegram">Tele mini App</span></a>
                 </div>
             </div>
         </section>
@@ -75,35 +76,7 @@
 
         <section id="services" class="services">
             <h3 class="comm-title" data-i18n="nav.features">功能</h3>
-            <div class="section-grid">
-                <div class="service-title">
-                    <h1 data-i18n="services.items.divination.title">玄學卜算</h1>
-                </div>
-                <div class="service-title">
-                    <h1 data-i18n="services.items.companion.title">人生陪伴</h1>
-                </div>
-                <div class="service-title">
-                    <h1 data-i18n="services.items.health.title">中醫養身</h1>
-                </div>
-                <div class="service-title">
-                    <h1 data-i18n="services.items.charity.title">公益行善</h1>
-                </div>
-                <div class="service-title">
-                    <h1 data-i18n="services.items.interaction.title">道友互動</h1>
-                </div>
-                <div class="service-title">
-                    <h1 data-i18n="services.items.artifacts.title">法物流通</h1>
-                </div>
-                <div class="service-title">
-                    <h1 data-i18n="services.items.master.title">大師解惑</h1>
-                </div>
-                <div class="service-title">
-                    <h1 data-i18n="services.items.classics.title">典籍解讀</h1>
-                </div>
-                <div class="service-title">
-                    <h1 data-i18n="services.items.pilgrimage.title">聖地巡禮</h1>
-                </div>
-            </div>
+
             <div class="services-grid" style="margin-top: 60px;">
                 <div class="service-card">
                     <div class="service-icon">
@@ -113,14 +86,7 @@
                         <span data-i18n="services.items.divination.title">玄學卜算</span>
                         <small><span data-i18n="services.items.divination.subtitle">命理、卜卦、相術、風水</span></small>
                     </h2>
-                    <div class="service-card-desc">
-                        <h3 data-i18n="services.items.divination.features.fate.title">命理解析</h3>
-                        <p data-i18n="services.items.divination.features.fate.desc">運用八字、五行、紫微等傳統理論，解析個人命運走勢、性格特質與運勢波動，幫助用戶更清晰地認識自我，趨吉避兇。</p>
-                        <h3 data-i18n="services.items.divination.features.fortune.title">卜卦算命</h3>
-                        <p data-i18n="services.items.divination.features.fortune.desc">基於玄學的各種算法來進行占蔔手段，通過投卦、解卦等方式預測未來吉兇禍福，為用戶在迷茫時提供及時參考和決策指引。</p>
-                        <h3 data-i18n="services.items.divination.features.fengshui.title">風水相術</h3>
-                        <p data-i18n="services.items.divination.features.fengshui.desc">整合面相、手相與居住風水，等視覺識別模式，解析個人氣場和環境能量，提供改善建議，助用戶調整布局，平衡陰陽，迎接好運。</p>
-                    </div>
+
                 </div> <div class="service-card">
                 <div class="service-icon">
                     <img src="images/feature_2.png" alt="人生陪伴">
@@ -129,12 +95,7 @@
                     <span data-i18n="services.items.companion.title">人生陪伴</span>
                     <small><span data-i18n="services.items.companion.subtitle">陪伴、开导、鼓励、提醒</span></small>
                 </h2>
-                <div class="service-card-desc">
-                    <h3 data-i18n="services.items.companion.features.reminder.title">日常提醒</h3>
-                    <p data-i18n="services.items.companion.features.reminder.desc">智能系統根據用戶命理、地域、環境等數據，推送玄學、養身、天氣、節日等方面的提醒與建議，為用戶提供貼心關懷，幫助建立良好的生活規律，提升整體生活質量。</p>
-                    <h3 data-i18n="services.items.companion.features.encouragement.title">鼓勵開導</h3>
-                    <p data-i18n="services.items.companion.features.encouragement.desc">智能系統結合用戶健康數據、情緒反饋，推送正能量語錄和實用開導建議，在用戶遇到困惑和挫折時，提供心理疏導與情感支持，助力重拾信心，營造積極樂觀的生活氛圍。</p>
-                </div>
+
             </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -144,14 +105,7 @@
                         <span data-i18n="services.items.health.title">中醫養身</span>
                         <small><span data-i18n="services.items.health.subtitle">预防、寻诊、开方、健体</span></small>
                     </h2>
-                    <div class="service-card-desc">
-                        <h3 data-i18n="services.items.health.features.prevention.title">預防未病</h3>
-                        <p data-i18n="services.items.health.features.prevention.desc">通過黃帝內經素問篇中對於五運六氣的運用，結合用戶現狀來進行推算，制定個性化預防方案，註重飲食、情誌與運動平衡，提前預防疾病，守護健康。</p>
-                        <h3 data-i18n="services.items.health.features.diagnosis.title">問診開方</h3>
-                        <p data-i18n="services.items.health.features.diagnosis.desc">依托中醫大模型實現望聞問切，根據個體體質與癥狀，提供定制化診療方案，輔以草藥、針灸等傳統療法，實現精準開方。</p>
-                        <h3 data-i18n="services.items.health.features.health.title">養身保健</h3>
-                        <p data-i18n="services.items.health.features.health.desc">融合中醫智慧與現代理念，提供飲食調養、運動鍛煉及情誌平衡等多維健康指導，助力全方位養生保健。</p>
-                    </div>
+
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -161,12 +115,7 @@
                         <span data-i18n="services.items.charity.title">公益行善</span>
                         <small><span data-i18n="services.items.charity.subtitle">分析、研究、传承、助人</span></small>
                     </h2>
-                    <div class="service-card-desc">
-                        <h3 data-i18n="services.items.charity.features.infrastructure.title">行業基建</h3>
-                        <p data-i18n="services.items.charity.features.infrastructure.desc">通過資助數據分析、專項研究、傳承維系等方面的工作，為玄學世界構建玄學世界的基礎設施，提供壹個保護傳承、鼓勵創新的公益平臺。</p>
-                        <h3 data-i18n="services.items.charity.features.platform.title">開放平臺</h3>
-                        <p data-i18n="services.items.charity.features.platform.desc">搭建開放公益平臺，打通社會資源與公益需求的橋梁，利用區塊鏈技術提供項目發布、捐贈追蹤和跨界合作等功能，激勵各界廣泛參與，共創行善新局面。</p>
-                    </div>
+
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -176,16 +125,7 @@
                         <span data-i18n="services.items.interaction.title">道友互動</span>
                         <small><span data-i18n="services.items.interaction.subtitle">分享、互助、祈福、归宗</span></small>
                     </h2>
-                    <div class="service-card-desc">
-                        <h3 data-i18n="services.items.interaction.features.sharing.title">卜算分享</h3>
-                        <p data-i18n="services.items.interaction.features.sharing.desc">用戶可在平臺上分享各自的蔔算體驗與命理見解，交流探討預測結果，互通有無。</p>
-                        <h3 data-i18n="services.items.interaction.features.master.title">大師群組</h3>
-                        <p data-i18n="services.items.interaction.features.master.desc">大師在線與大家互動，開展講座與經驗分享，近距離感受傳統智慧的魅力。</p>
-                        <h3 data-i18n="services.items.interaction.features.blessing.title">祈福祝賀</h3>
-                        <p data-i18n="services.items.interaction.features.blessing.desc">提供線上祈福功能，共同祈求吉祥安康，傳遞正能量，營造溫暖和諧氛圍。</p>
-                        <h3 data-i18n="services.items.interaction.features.pilgrimage.title">巡禮打卡</h3>
-                        <p data-i18n="services.items.interaction.features.pilgrimage.desc">道友可記錄行程、上傳照片、分享體驗，互動交流，共同留下珍貴的心靈紀念。</p>
-                    </div>
+
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -195,16 +135,7 @@
                         <span data-i18n="services.items.artifacts.title">法物流通</span>
                         <small><span data-i18n="services.items.artifacts.subtitle">法物、书籍、摆件、保健</span></small>
                     </h2>
-                    <div class="service-card-desc">
-                        <h3 data-i18n="services.items.artifacts.features.blessed.title">开光法物</h3>
-                        <p data-i18n="services.items.artifacts.features.blessed.desc">经过专业仪式开光，赋予灵性的物件。</p>
-                        <h3 data-i18n="services.items.artifacts.features.decoration.title">转运摆件</h3>
-                        <p data-i18n="services.items.artifacts.features.decoration.desc">甄选寓意吉祥，调节能量的环境摆件。</p>
-                        <h3 data-i18n="services.items.artifacts.features.books.title">相关书籍</h3>
-                        <p data-i18n="services.items.artifacts.features.books.desc">玄学和养身相关的各类书籍。</p>
-                        <h3 data-i18n="services.items.artifacts.features.health.title">养身保健</h3>
-                        <p data-i18n="services.items.artifacts.features.health.desc">养身相关的保健品和保健器材。</p>
-                    </div>
+
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -214,12 +145,7 @@
                         <span data-i18n="services.items.master.title">大師解惑</span>
                         <small><span data-i18n="services.items.master.subtitle">拜師、修行、解惑、修行</span></small>
                     </h2>
-                    <div class="service-card-desc">
-                        <h3 data-i18n="services.items.master.features.apprenticeship.title">拜師修行</h3>
-                        <p data-i18n="services.items.master.features.apprenticeship.desc">平臺匯聚眾多玄學大師，提供線上拜師結對等形式，指導用戶系統學習玄學理論與實修方法，助力修行者逐步提升心性與境界。</p>
-                        <h3 data-i18n="services.items.master.features.guidance.title">問道解惑</h3>
-                        <p data-i18n="services.items.master.features.guidance.desc">用戶可以根據實際情況，在線提出人生疑問與命運困惑，由大師在線解答，傳授處世智慧與調理心態的秘訣，助您撥雲見日。</p>
-                    </div>
+
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -229,14 +155,7 @@
                         <span data-i18n="services.items.classics.title">典籍解读</span>
                         <small><span data-i18n="services.items.classics.subtitle">收集、分类、释义、永存</span></small>
                     </h2>
-                    <div class="service-card-desc">
-                        <h3 data-i18n="services.items.classics.features.reading.title">在線閱讀</h3>
-                        <p data-i18n="services.items.classics.features.reading.desc">提供便捷在線瀏覽典籍的服務，涵蓋大量古籍文獻，支持全文搜索、書簽標註和個性化收藏，隨時隨地感受傳統智慧的魅力。</p>
-                        <h3 data-i18n="services.items.classics.features.storage.title">永續存儲</h3>
-                        <p data-i18n="services.items.classics.features.storage.desc">利用區塊鏈等前沿技術，實現典籍數據的永久存儲與防篡改，確保珍貴文獻傳承不息，歷史智慧得以永續共享。</p>
-                        <h3 data-i18n="services.items.classics.features.interpretation.title">典籍釋義</h3>
-                        <p data-i18n="services.items.classics.features.interpretation.desc">匯集各家解釋，橫向對比不同流派註解，並開放在線辨經討論，共同探討經典內涵。</p>
-                    </div>
+
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -246,14 +165,7 @@
                         <span data-i18n="services.items.pilgrimage.title">聖地巡禮</span>
                         <small><span data-i18n="services.items.pilgrimage.subtitle">百科、导航、活动、指引</span></small>
                     </h2>
-                    <div class="service-card-desc">
-                        <h3 data-i18n="services.items.pilgrimage.features.encyclopedia.title">山門百科</h3>
-                        <p data-i18n="services.items.pilgrimage.features.encyclopedia.desc">收錄各大聖地的山門資料，詳述歷史淵源、文化內涵、傳說故事及建築風格，帶您領略古韻悠長的聖地風貌。</p>
-                        <h3 data-i18n="services.items.pilgrimage.features.activities.title">活動預告</h3>
-                        <p data-i18n="services.items.pilgrimage.features.activities.desc">實時更新聖地巡禮期間舉辦的各類文化活動、儀式及講座等信息，提供詳細時間、地點及流程安排，助您提前規劃行程，不錯過每壹場獨特的聖地盛會。</p>
-                        <h3 data-i18n="services.items.pilgrimage.features.navigation.title">定位導航</h3>
-                        <p data-i18n="services.items.pilgrimage.features.navigation.desc">基於精準地理信息，提供聖地實時定位、路徑規劃和導航服務，助您輕松找到目的地，暢享巡禮體驗。</p>
-                    </div>
+                    
                 </div>
 
             </div>
@@ -273,13 +185,6 @@
             <div class="path-steps">
                 <div class="step">
                     <div class="step-icon">
-                        <img src="images/icon_tech1.png" alt="區塊鏈生態">
-                    </div>
-                    <h3 data-i18n="about.tech.items.blockchain.title">區塊鏈生態</h3>
-                    <p data-i18n="about.tech.items.blockchain.desc">利用區塊鏈技術實現生態內的利益分配、玄學算法的協同開發、經典數據的永久保存。</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon">
                         <img src="images/icon_tech2.png" alt="互聯網服務">
                     </div>
                     <h3 data-i18n="about.tech.items.internet.title">互聯網服務</h3>
@@ -291,6 +196,13 @@
                     </div>
                     <h3 data-i18n="about.tech.items.ai.title">人工智能模型</h3>
                     <p data-i18n="about.tech.items.ai.desc">訓練和利用大語言、圖像分析等人工智能模型，來實現玄學、中醫、養身話題的精準對話。</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <img src="images/icon_tech1.png" alt="區塊鏈生態">
+                    </div>
+                    <h3 data-i18n="about.tech.items.blockchain.title">區塊鏈生態</h3>
+                    <p data-i18n="about.tech.items.blockchain.desc">利用區塊鏈技術實現生態內的利益分配、玄學算法的協同開發、經典數據的永久保存。</p>
                 </div>
                 <div class="step">
                     <div class="step-icon">
@@ -310,7 +222,7 @@
             <div class="footer-buttons">
                 <button class="btn ios"><img src="images/icon_ios.png" alt="iOS App"/><br/><span data-i18n="footer.buttons.ios">敬请期待</span></button>
                 <a href="#" target="_blank" class="btn android"><img src="images/icon_android.png" alt="Android App"/><br/><span data-i18n="footer.buttons.android">Android</span></a>
-                <a href="#" target="_blank" class="btn tele"><img src="images/icon_tele.png" alt="Telegram App"/><br/><span data-i18n="footer.buttons.telegram">Tele mini App</span></a>
+                <a href="https://t.me/bitdao_dev_bot" target="_blank" class="btn tele"><img src="images/icon_tele.png" alt="Telegram App"/><br/><span data-i18n="footer.buttons.telegram">Tele mini App</span></a>
             </div>
             <p class="copyright" data-i18n="footer.copyright">© 2025 BitDao.com 版權所有</p>
         </div>
@@ -326,36 +238,66 @@
         </div>
     </div>
     
-    <script type="module">
-        import languageManager from './src/languages/languageManager.js';
-
-        // 初始化语言管理器
-        languageManager.init();
-
+    <!-- 将脚本移到 body 底部 -->
+    <script src="src/languages/zh.js"></script>
+    <script src="src/languages/en.js"></script>
+    <script src="src/languages/languageManager.js"></script>
+    <script>
         // Language switcher functionality
         const langBtn = document.querySelector('.lang-btn');
         const langDropdown = document.querySelector('.lang-dropdown');
-        const langButtons = langDropdown.querySelectorAll('button');
+        const langButtons = document.querySelectorAll('.lang-dropdown button');
 
-        // Show/hide dropdown on click
-        langBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            langDropdown.classList.toggle('show');
+        // Show/hide dropdown on hover
+        langBtn.addEventListener('mouseenter', () => {
+            langDropdown.style.display = 'block';
+        });
+
+        langDropdown.addEventListener('mouseleave', () => {
+            langDropdown.style.display = 'none';
         });
 
         // Handle language selection
         langButtons.forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
                 const lang = this.dataset.lang;
-                languageManager.setLanguage(lang);
-                langDropdown.classList.remove('show');
+                console.log('Button clicked:', lang);
+                if (lang) {
+                    window.languageManager.setLanguage(lang);
+                    langDropdown.style.display = 'none';
+                }
             });
         });
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
-                langDropdown.classList.remove('show');
+        // Contact Modal functionality
+        const contactLink = document.querySelector('.contact-link');
+        const contactModal = document.getElementById('contactModal');
+        const closeModal = document.querySelector('.close-modal');
+
+        contactLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            contactModal.style.display = 'block';
+            setTimeout(() => {
+                contactModal.classList.add('show');
+            }, 10);
+        });
+
+        closeModal.addEventListener('click', () => {
+            contactModal.classList.remove('show');
+            setTimeout(() => {
+                contactModal.style.display = 'none';
+            }, 300);
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === contactModal) {
+                contactModal.classList.remove('show');
+                setTimeout(() => {
+                    contactModal.style.display = 'none';
+                }, 300);
             }
         });
 
