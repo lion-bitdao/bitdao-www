@@ -76,7 +76,7 @@ window.en = {
     about: {
         content: {
             p1: "Hello everyone, I am Lion, a mystic enthusiast and also a code farmer who has written twenty overloaded codes. At the intersection of silicon-based and carbon based civilizations, I use binary code as symbols and algorithmic logic as disks to continuously engage in digital learning and reconstruction of the metaphysical knowledge system.",
-            p2: "BitDao is a systematic summary of my over twenty years of code rest and practice, and also a new journey for me to explore mystical knowledge. I hope to achieve more modern and intelligent metaphysical services by deeply integrating the basic algorithms of metaphysics with artificial intelligence models.",
+            p2: "BitDAO is a systematic summary of my over twenty years of coding practice, and also a new journey for me to explore mystical knowledge. I hope to achieve more modern and intelligent metaphysical services by deeply integrating the basic algorithms of metaphysics with artificial intelligence models.",
             p3: "I hope to turn BitDao into a portable mystical follower, providing ubiquitous mystical services for everyone. At the same time, we also hope to meet more like-minded people and explore the infinite possibilities of mystical knowledge together through the operation process of BitDao."
         },
         tech: {
