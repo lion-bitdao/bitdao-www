@@ -1,70 +1,63 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Telegram Login</title>
-        <style>
-            body { 
-                font-family: Arial, sans-serif; 
-                text-align: center; 
-                padding: 20px; 
-                background: #f5f5f5;
-            }
-            .container {
-                max-width: 400px;
-                margin: 50px auto;
-                background: white;
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            }
-            .btn {
-                background: #0088cc;
-                color: white;
-                padding: 12px 24px;
-                border: none;
-                border-radius: 5px;
-                font-size: 16px;
-                cursor: pointer;
-                text-decoration: none;
-                display: inline-block;
-                margin: 10px;
-            }
-            .btn:hover { background: #006699; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h2>Telegram登录</h2>
-            <p>点击下面的按钮进行登录</p>
-            
-            <!-- 方法1: 直接跳转到Telegram -->
-            <a href="https://t.me/bitdao_dev_bot?start=login" class="btn">
-                打开Telegram登录
-            </a>
-            
-            <!-- 方法2: 手动输入 -->
-            <div style="margin-top: 30px;">
-                <h3>或者手动操作：</h3>
-                <ol style="text-align: left;">
-                    <li>打开Telegram</li>
-                    <li>搜索 @bitdao_dev_bot</li>
-                    <li>发送 /start</li>
-                    <li>按照提示完成登录</li>
-                </ol>
-            </div>
-            
-            <button onclick="checkLogin()" class="btn" style="background: #28a745;">
-                检查登录状态
-            </button>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Login</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .login-widget {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>使用Telegram登录</h1>
+        <p>点击下方按钮使用您的Telegram账户登录</p>
+        <div class="login-widget">
+            <script async src="https://telegram.org/js/telegram-widget.js?22" 
+                    data-telegram-login="bitdao_dev_bot" 
+                    data-size="large" 
+                    data-auth-url="javascript:void(0);" 
+                    data-request-access="write">
+            </script>
         </div>
-        
-        <script>
-            function checkLogin() {
-                // 这里可以轮询检查登录状态
-                alert('请在Telegram中完成登录，然后点击"检查登录状态"');
+    </div>
+    <script>
+        function onTelegramAuth(user) {
+            // 将用户信息发送给Flutter
+            if (window.TelegramLogin) {
+                window.TelegramLogin.postMessage(JSON.stringify(user));
             }
-        </script>
-    </body>
-    </html>
+        }
+        
+        // 监听Telegram登录成功事件
+        window.addEventListener('message', function(event) {
+            if (event.data && event.data.auth_date) {
+                onTelegramAuth(event.data);
+            }
+        });
+    </script>
+</body>
+</html>
