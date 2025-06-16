@@ -1,20 +1,70 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script async src="https://telegram.org/js/telegram-widget.js?7"
-      data-telegram-login="bitdao_dev_bot"
-      data-size="large"
-      data-userpic="false"
-      data-request-access="write"
-      data-userpic="false"
-      data-on-auth="onTelegramAuth">
-    </script>
-    <script type="text/javascript">
-      function onTelegramAuth(user) {
-        TelegramLogin.postMessage(JSON.stringify(user));
-      }
-    </script>
-  </head>
-  <body>
-  </body>
-</html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Telegram Login</title>
+        <style>
+            body { 
+                font-family: Arial, sans-serif; 
+                text-align: center; 
+                padding: 20px; 
+                background: #f5f5f5;
+            }
+            .container {
+                max-width: 400px;
+                margin: 50px auto;
+                background: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            .btn {
+                background: #0088cc;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                text-decoration: none;
+                display: inline-block;
+                margin: 10px;
+            }
+            .btn:hover { background: #006699; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Telegram登录</h2>
+            <p>点击下面的按钮进行登录</p>
+            
+            <!-- 方法1: 直接跳转到Telegram -->
+            <a href="https://t.me/bitdao_dev_bot?start=login" class="btn">
+                打开Telegram登录
+            </a>
+            
+            <!-- 方法2: 手动输入 -->
+            <div style="margin-top: 30px;">
+                <h3>或者手动操作：</h3>
+                <ol style="text-align: left;">
+                    <li>打开Telegram</li>
+                    <li>搜索 @bitdao_dev_bot</li>
+                    <li>发送 /start</li>
+                    <li>按照提示完成登录</li>
+                </ol>
+            </div>
+            
+            <button onclick="checkLogin()" class="btn" style="background: #28a745;">
+                检查登录状态
+            </button>
+        </div>
+        
+        <script>
+            function checkLogin() {
+                // 这里可以轮询检查登录状态
+                alert('请在Telegram中完成登录，然后点击"检查登录状态"');
+            }
+        </script>
+    </body>
+    </html>
